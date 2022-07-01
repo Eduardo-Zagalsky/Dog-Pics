@@ -2,6 +2,7 @@ async function randomDog() {
     let result = await axios.get('https://dog.ceo/api/breeds/image/random')
     let img = document.createElement("img");
     img.src = result.data.message;
+    img.className = "col-4"
     let imgBox = document.querySelector("#img-box");
     imgBox.append(img);
 }
@@ -9,6 +10,7 @@ async function getDogPic(doggy) {
     let dogPic = await axios.get(`https://dog.ceo/api/breed/${doggy}/images/random`);
     let img = document.createElement("img");
     img.src = dogPic.data.message;
+    img.className = "col-4"
     let imgBox = document.querySelector("#img-box");
     imgBox.append(img);
 }
